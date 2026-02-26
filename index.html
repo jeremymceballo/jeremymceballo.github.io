@@ -3,330 +3,218 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jeremy Ceballo</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <title>Jeremy Ceballo | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet" />
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
-      --bg: #0d0d0d;
-      --surface: #161616;
-      --border: #2a2a2a;
-      --text: #e0e0e0;
-      --muted: #888;
-      --accent: #4fc3f7;
+      --bg-color: #000000;
+      --text-color: #ffffff;
+      --border-color: #333333;
+      --accent-color: #aaaaaa;
     }
 
     body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'Inter', sans-serif;
-      font-size: 15px;
-      line-height: 1.7;
-      padding: 0 1.5rem;
-    }
-
-    main {
-      max-width: 680px;
-      margin: 0 auto;
-      padding: 5rem 0 6rem;
-    }
-
-    /* ── Header ── */
-    .header { margin-bottom: 3.5rem; }
-
-    .header h1 {
-      font-size: 2rem;
-      font-weight: 600;
-      letter-spacing: -0.02em;
-      color: #fff;
-      margin-bottom: 0.4rem;
-    }
-
-    .header .tagline {
-      color: var(--accent);
-      font-size: 0.9rem;
-      font-weight: 400;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      margin-bottom: 1.2rem;
-    }
-
-    .header p {
-      color: var(--muted);
-      font-size: 0.95rem;
-      max-width: 540px;
-    }
-
-    /* ── Links ── */
-    .links {
-      display: flex;
-      gap: 1.25rem;
-      margin-top: 1.5rem;
-      flex-wrap: wrap;
-    }
-
-    .links a {
-      color: var(--text);
-      text-decoration: none;
-      font-size: 0.85rem;
-      font-weight: 500;
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 1px;
-      transition: color 0.15s, border-color 0.15s;
-    }
-
-    .links a:hover {
-      color: var(--accent);
-      border-color: var(--accent);
-    }
-
-    /* ── Sections ── */
-    section { margin-bottom: 3rem; }
-
-    section h2 {
-      font-size: 0.75rem;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 1.25rem;
-      padding-bottom: 0.6rem;
-      border-bottom: 1px solid var(--border);
-    }
-
-    /* ── Work entries ── */
-    .work-entry {
-      margin-bottom: 1.75rem;
-    }
-
-    .work-entry:last-child { margin-bottom: 0; }
-
-    .work-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: 1rem;
-      flex-wrap: wrap;
-      margin-bottom: 0.25rem;
-    }
-
-    .work-title {
-      font-weight: 500;
-      color: #fff;
-      font-size: 0.95rem;
-    }
-
-    .work-period {
-      font-size: 0.8rem;
-      color: var(--muted);
-      white-space: nowrap;
-      flex-shrink: 0;
-    }
-
-    .work-org {
-      font-size: 0.85rem;
-      color: var(--accent);
-      margin-bottom: 0.4rem;
-    }
-
-    .work-desc {
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
-
-    /* ── Focus areas ── */
-    .focus-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-    }
-
-    @media (max-width: 480px) {
-      .focus-grid { grid-template-columns: 1fr; }
-    }
-
-    .focus-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      padding: 1rem 1.1rem;
-    }
-
-    .focus-card h3 {
-      font-size: 0.85rem;
-      font-weight: 500;
-      color: #fff;
-      margin-bottom: 0.35rem;
-    }
-
-    .focus-card p {
-      font-size: 0.82rem;
-      color: var(--muted);
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      margin: 0;
+      padding: 40px;
       line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
     }
 
-    /* ── Education ── */
-    .edu-entry {
-      margin-bottom: 1rem;
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 2.5fr 1.5fr 1.5fr;
+      gap: 40px;
+      max-width: 1400px;
+      margin: 0 auto;
     }
 
-    .edu-entry:last-child { margin-bottom: 0; }
+    .column {
+      border-top: 1px solid var(--text-color);
+      padding-top: 20px;
+    }
 
-    .edu-degree {
+    h2 {
+      font-size: 1rem;
+      font-weight: 400;
+      margin-bottom: 30px;
+      margin-top: 0;
+    }
+
+    .nav-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .nav-list li {
+      margin-bottom: 10px;
+    }
+
+    .nav-list a {
+      color: var(--text-color);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-list a::before {
+      content: "→";
+      margin-right: 8px;
+      font-weight: 300;
+    }
+
+    .nav-list a:hover {
+      color: var(--accent-color);
+    }
+
+    p {
+      font-size: 0.95rem;
+      margin-bottom: 25px;
+      color: #efefef;
+    }
+
+    .italic-list {
+      font-style: italic;
       font-size: 0.9rem;
-      font-weight: 500;
-      color: #fff;
+      margin-bottom: 25px;
+      color: #cccccc;
     }
 
-    .edu-school {
-      font-size: 0.85rem;
-      color: var(--muted);
+    ul.experience-list {
+      list-style: disc;
+      padding-left: 20px;
+      font-size: 0.9rem;
     }
 
-    /* ── Footer ── */
-    footer {
-      margin-top: 4rem;
-      padding-top: 1.5rem;
-      border-top: 1px solid var(--border);
-      font-size: 0.8rem;
-      color: var(--muted);
+    ul.experience-list li {
+      margin-bottom: 12px;
     }
 
-    a { color: var(--accent); }
+    .section-label {
+      display: block;
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+      color: var(--accent-color);
+    }
+
+    hr.divider {
+      border: 0;
+      border-top: 1px solid #333;
+      margin: 30px 0;
+    }
+
+    @media (max-width: 900px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+      body {
+        padding: 20px;
+      }
+    }
   </style>
 </head>
 <body>
-  <main>
 
-    <!-- Header -->
-    <header class="header">
-      <h1>Jeremy Ceballo</h1>
-      <p class="tagline">AI Security &amp; Intelligence</p>
+  <div class="container">
+
+    <!-- Col 1: Name + Nav -->
+    <div class="column">
+      <h2>Jeremy Ceballo</h2>
+      <ul class="nav-list">
+        <li><a href="https://www.linkedin.com/in/jeremy-ceballo-6138ba140/" target="_blank" rel="noopener">linkedin</a></li>
+        <li><a href="mailto:jeremymceballo@gmail.com">email</a></li>
+      </ul>
+    </div>
+
+    <!-- Col 2: About -->
+    <div class="column">
+      <h2>About me</h2>
       <p>
         Security-focused AI practitioner working at the intersection of frontier model evaluation,
         adversarial testing, and threat intelligence. I help organizations understand where AI
         systems fail, get abused, or create unanticipated risk.
       </p>
-      <nav class="links">
-        <a href="https://www.linkedin.com/in/jeremy-ceballo-6138ba140/" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="mailto:jeremymceballo@gmail.com">Email</a>
-      </nav>
-    </header>
+      <p>
+        My work spans hands-on red-teaming of tool-augmented AI agents, China-focused threat
+        intelligence on model access and proxy ecosystems, disinformation and integrity evaluation,
+        and compliance due diligence for AI-adjacent transactions.
+      </p>
+      <div class="italic-list">
+        Prompt injection, tool misuse, agentic authorization failures, connector &amp; MCP risk,
+        OSINT, SOCMINT, sanctions screening, influence operations, EU AI Act alignment...
+      </div>
+      <p>
+        Multilingual across English, Spanish, French, Portuguese, Mandarin, and Slovak —
+        with applied coverage across Chinese-, Spanish-, French-, and Portuguese-language threat landscapes.
+      </p>
+    </div>
 
-    <!-- Experience -->
-    <section>
+    <!-- Col 3: Experience -->
+    <div class="column">
       <h2>Experience</h2>
 
-      <div class="work-entry">
-        <div class="work-header">
-          <span class="work-title">Senior Analyst — AI Red Teamer &amp; China Lead</span>
-          <span class="work-period">2023 – Present</span>
-        </div>
-        <div class="work-org">10A Labs</div>
-        <p class="work-desc">
-          Adversarial evaluation of frontier AI systems across tool use, agentic workflows,
-          and multimodal surfaces. China-focused threat intelligence covering proxy ecosystems,
-          access-pattern monitoring, and abuse-signal tracking.
-        </p>
-      </div>
+      <span class="section-label">Current:</span>
+      <ul class="experience-list">
+        <li>10A Labs — Senior Analyst, AI Red Teamer &amp; China Lead</li>
+      </ul>
 
-      <div class="work-entry">
-        <div class="work-header">
-          <span class="work-title">Disinformation Research Fellow — Spanish &amp; Portuguese</span>
-          <span class="work-period">2022 – 2023</span>
-        </div>
-        <div class="work-org">Independent / Contracted</div>
-        <p class="work-desc">
-          SOCMINT and OSINT on influence operations, election integrity threats, and
-          coordinated inauthentic behavior across Spanish- and Portuguese-language platforms.
-        </p>
-      </div>
+      <hr class="divider" />
 
-      <div class="work-entry">
-        <div class="work-header">
-          <span class="work-title">Social Media Analyst — French Election Coverage</span>
-          <span class="work-period">2022</span>
-        </div>
-        <div class="work-org">Graphika</div>
-        <p class="work-desc">
-          Tracked French-language disinformation narratives and escalation pathways during
-          the 2022 election cycle. Produced actionable moderation signals and mapped
-          coordinated extremist ecosystems.
-        </p>
-      </div>
+      <span class="section-label">Past:</span>
+      <ul class="experience-list">
+        <li>Spanish-Language Disinformation Research Fellow</li>
+        <li>Graphika — Social Media Analyst, French Election Coverage</li>
+        <li>U.S. Department of State (GEC) — Graduate Capstone Consultant</li>
+        <li>Columbia University (Picker Center) — Associate Director, EMPA</li>
+      </ul>
 
-      <div class="work-entry">
-        <div class="work-header">
-          <span class="work-title">Graduate Capstone Consultant</span>
-          <span class="work-period">2019</span>
-        </div>
-        <div class="work-org">U.S. Department of State — Global Engagement Center</div>
-        <p class="work-desc">
-          Analyzed IRA-linked information operation activity and produced executive-facing
-          intelligence on campaign objectives and targeting patterns.
-        </p>
-      </div>
-    </section>
+      <hr class="divider" />
 
-    <!-- Focus Areas -->
-    <section>
-      <h2>Focus Areas</h2>
-      <div class="focus-grid">
+      <span class="section-label">Education:</span>
+      <ul class="experience-list">
+        <li>Columbia SIPA — MIA, International Security Policy</li>
+        <li>Sciences Po — Master of International Public Management</li>
+        <li>Columbia University — BA, Political Science</li>
+      </ul>
+    </div>
 
-        <div class="focus-card">
-          <h3>Frontier Model Security</h3>
-          <p>Adversarial testing of AI systems — prompt injection, tool misuse,
-             authorization failures, connector and MCP risk, sandbox escapes.</p>
-        </div>
+    <!-- Col 4: Focus Areas -->
+    <div class="column">
+      <h2>Focus areas</h2>
 
-        <div class="focus-card">
-          <h3>Threat Intelligence &amp; OSINT</h3>
-          <p>China-focused monitoring of proxy ecosystems, infrastructure clustering,
-             jailbreak chatter, and AI access-control circumvention.</p>
-        </div>
+      <span class="section-label">AI Security:</span>
+      <ul class="experience-list">
+        <li>Frontier model red-teaming</li>
+        <li>Prompt injection &amp; tool misuse</li>
+        <li>Connector &amp; MCP risk</li>
+        <li>Agentic authorization failures</li>
+        <li>Sandbox &amp; execution risk</li>
+      </ul>
 
-        <div class="focus-card">
-          <h3>Trust, Safety &amp; Integrity</h3>
-          <p>Evaluation framework design for disinformation, state-linked media,
-             and harmful-manipulation testing aligned to policy requirements.</p>
-        </div>
+      <hr class="divider" />
 
-        <div class="focus-card">
-          <h3>Compliance &amp; Investigations</h3>
-          <p>Due diligence, sanctions screening, payment-rail risk, and structured
-             investigative reporting for AI-adjacent transactions.</p>
-        </div>
+      <span class="section-label">Intelligence &amp; Integrity:</span>
+      <ul class="experience-list">
+        <li>China threat &amp; proxy OSINT</li>
+        <li>Disinformation evaluation</li>
+        <li>Influence operation analysis</li>
+        <li>Harmful-manipulation testing</li>
+        <li>EU AI Act-aligned compliance</li>
+      </ul>
 
-      </div>
-    </section>
+      <hr class="divider" />
 
-    <!-- Education -->
-    <section>
-      <h2>Education</h2>
+      <span class="section-label">Investigations:</span>
+      <ul class="experience-list">
+        <li>Sanctions screening &amp; due diligence</li>
+        <li>Payment-rail risk assessment</li>
+        <li>Structured investigative reporting</li>
+      </ul>
+    </div>
 
-      <div class="edu-entry">
-        <div class="edu-degree">Master of International Affairs — International Security Policy</div>
-        <div class="edu-school">Columbia University, School of International and Public Affairs</div>
-      </div>
+  </div>
 
-      <div class="edu-entry">
-        <div class="edu-degree">Master of International Public Management</div>
-        <div class="edu-school">Sciences Po, Paris School of International Affairs</div>
-      </div>
-
-      <div class="edu-entry">
-        <div class="edu-degree">BA, Political Science</div>
-        <div class="edu-school">Columbia University</div>
-      </div>
-    </section>
-
-    <footer>
-      <p>Jeremy Ceballo &mdash; <a href="mailto:jeremymceballo@gmail.com">jeremymceballo@gmail.com</a></p>
-    </footer>
-
-  </main>
 </body>
 </html>
