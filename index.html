@@ -21,77 +21,69 @@
       color: var(--text-color);
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       margin: 0;
-      padding: 40px;
+      padding: 28px 36px;
       line-height: 1.5;
       -webkit-font-smoothing: antialiased;
     }
 
     .container {
       display: grid;
-      grid-template-columns: 1fr 2.5fr 1.5fr 1.5fr;
-      gap: 40px;
+      grid-template-columns: 1fr 2.6fr 1.4fr 1.2fr;
+      gap: 32px;
       max-width: 1400px;
       margin: 0 auto;
     }
 
     .column {
       border-top: 1px solid var(--text-color);
-      padding-top: 20px;
+      padding-top: 16px;
     }
 
-    /* ── Name (col 1 heading) ── */
+    /* ── Name ── */
     .name-heading {
       font-family: 'Shippori Mincho', Georgia, serif;
-      font-size: 1.4rem;
+      font-size: 1.3rem;
       font-weight: 600;
       letter-spacing: 0.07em;
-      margin-bottom: 30px;
-      margin-top: 0;
+      margin: 0 0 14px;
     }
 
     /* ── Column headers ── */
     h2 {
       font-family: 'Shippori Mincho', Georgia, serif;
-      font-size: 1.4rem;
+      font-size: 1.3rem;
       font-weight: 400;
-      margin-bottom: 30px;
-      margin-top: 0;
+      margin: 0 0 14px;
       letter-spacing: 0.01em;
     }
 
-    /* ── Nav links with animated arrow ── */
+    /* ── Nav ── */
     .nav-list {
       list-style: none;
       padding: 0;
+      margin: 0 0 0;
     }
 
-    .nav-list li {
-      margin-bottom: 10px;
-    }
+    .nav-list li { margin-bottom: 8px; }
 
     .nav-list a {
       color: var(--text-color);
       text-decoration: none;
       display: flex;
       align-items: center;
+      font-size: 0.88rem;
       transition: color 0.2s;
     }
 
     .nav-list a .arrow {
       display: inline-block;
-      margin-right: 8px;
+      margin-right: 7px;
       font-weight: 300;
       transition: transform 0.2s ease;
     }
 
-    .nav-list a:hover {
-      color: var(--blue);
-      animation: glitch 0.25s steps(1) forwards;
-    }
-
-    .nav-list a:hover .arrow {
-      transform: translateX(5px);
-    }
+    .nav-list a:hover { color: var(--blue); animation: glitch 0.25s steps(1) forwards; }
+    .nav-list a:hover .arrow { transform: translateX(5px); }
 
     @keyframes glitch {
       0%   { text-shadow:  2px 0 #f07dd3, -2px 0 var(--blue); }
@@ -102,59 +94,55 @@
 
     /* ── Body copy ── */
     p {
-      font-size: 0.95rem;
-      margin-bottom: 25px;
+      font-size: 0.88rem;
+      margin: 0 0 10px;
       color: #efefef;
     }
 
-    p strong {
-      color: #ffffff;
-      font-weight: 600;
-    }
+    p strong { color: #fff; font-weight: 600; }
 
-    /* ── Skill tags (replaces italic list) ── */
+    /* ── Skill tags ── */
     .skill-tags {
       display: flex;
       flex-wrap: wrap;
-      gap: 7px;
-      margin-bottom: 25px;
+      gap: 5px;
+      margin-bottom: 10px;
     }
 
     .skill-tags .tag {
-      font-size: 0.75rem;
-      padding: 3px 9px;
+      font-size: 0.7rem;
+      padding: 2px 7px;
       border: 1px solid var(--blue);
       border-radius: 3px;
       color: var(--blue);
       white-space: nowrap;
     }
 
-    /* ── Experience list ── */
+    /* ── Lists ── */
     ul.experience-list {
       list-style: disc;
-      padding-left: 20px;
-      font-size: 0.9rem;
+      padding-left: 16px;
+      font-size: 0.85rem;
+      margin: 0;
     }
 
-    ul.experience-list li {
-      margin-bottom: 12px;
-    }
+    ul.experience-list li { margin-bottom: 6px; }
 
     /* ── Section subheaders ── */
     .section-label {
       display: flex;
       align-items: center;
       gap: 7px;
-      font-size: 1rem;
-      margin-bottom: 20px;
+      font-size: 0.9rem;
+      margin-bottom: 10px;
       color: var(--blue);
     }
 
     /* ── Pulsing green dot ── */
     .pulse-dot {
       display: inline-block;
-      width: 7px;
-      height: 7px;
+      width: 6px;
+      height: 6px;
       border-radius: 50%;
       background: #22c55e;
       flex-shrink: 0;
@@ -163,107 +151,90 @@
 
     @keyframes pulse {
       0%, 100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.5); }
-      50%       { box-shadow: 0 0 0 5px rgba(34, 197, 94, 0); }
-    }
-
-    /* ── Education with logo slot ── */
-    .edu-entry {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      margin-bottom: 14px;
-    }
-
-    .edu-logo {
-      width: 20px;
-      height: 20px;
-      object-fit: contain;
-      filter: grayscale(1) brightness(0.75);
-      flex-shrink: 0;
-      margin-top: 1px;
-    }
-
-    .edu-logo-placeholder {
-      width: 20px;
-      height: 20px;
-      border: 1px solid #444;
-      border-radius: 2px;
-      flex-shrink: 0;
+      50%       { box-shadow: 0 0 0 4px rgba(34, 197, 94, 0); }
     }
 
     hr.divider {
       border: 0;
-      border-top: 1px solid #333;
-      margin: 30px 0;
+      border-top: 1px solid #2a2a2a;
+      margin: 14px 0;
     }
 
-    /* ── Projects section ── */
-    .projects-section {
-      max-width: 1400px;
-      margin: 50px auto 0;
+    /* ── Education entries ── */
+    .edu-entry {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      margin-bottom: 8px;
+      font-size: 0.85rem;
     }
 
-    .projects-section h2 {
-      border-top: 1px solid var(--text-color);
-      padding-top: 20px;
-      margin-bottom: 30px;
+    .edu-logo-placeholder {
+      width: 16px;
+      height: 16px;
+      border: 1px solid #444;
+      border-radius: 2px;
+      flex-shrink: 0;
+      margin-top: 2px;
     }
 
+    /* ── Project cards (nested in col 2) ── */
     .projects-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 20px;
+      gap: 12px;
+      margin-top: 4px;
     }
 
     .project-card {
       border: 1px solid var(--border-color);
-      padding: 20px 22px;
+      padding: 12px 14px;
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 7px;
       transition: border-color 0.2s;
     }
 
-    .project-card:hover {
-      border-color: var(--blue);
-    }
+    .project-card:hover { border-color: var(--blue); }
 
     .project-card-top {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      gap: 10px;
+      gap: 8px;
     }
 
     .project-name {
       font-weight: 500;
-      font-size: 0.95rem;
+      font-size: 0.85rem;
       color: #fff;
     }
 
     .project-link {
       color: var(--accent-color);
       text-decoration: none;
-      font-size: 1rem;
+      font-size: 0.9rem;
       flex-shrink: 0;
       transition: color 0.2s;
     }
 
-    .project-link:hover {
-      color: var(--blue);
-    }
+    .project-link:hover { color: var(--blue); }
 
     .project-desc {
-      font-size: 0.85rem;
-      color: #aaa;
+      font-size: 0.78rem;
+      color: #999;
       margin: 0;
-      line-height: 1.6;
+      line-height: 1.5;
     }
 
-    @media (max-width: 900px) {
-      .container { grid-template-columns: 1fr; }
+    @media (max-width: 1000px) {
+      .container { grid-template-columns: 1fr 1fr; }
       .projects-grid { grid-template-columns: 1fr; }
       body { padding: 20px; }
+    }
+
+    @media (max-width: 600px) {
+      .container { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -271,9 +242,10 @@
 
   <div class="container">
 
-    <!-- Col 1: Name + Nav -->
+    <!-- Col 1: Name + Nav + Focus Areas -->
     <div class="column">
       <h2 class="name-heading">Jeremy Ceballo</h2>
+
       <ul class="nav-list">
         <li>
           <a href="https://www.linkedin.com/in/jeremy-ceballo-6138ba140/" target="_blank" rel="noopener">
@@ -286,92 +258,8 @@
           </a>
         </li>
       </ul>
-    </div>
 
-    <!-- Col 2: About -->
-    <div class="column">
-      <h2>About me</h2>
-      <p>
-        Security-focused AI practitioner working at the intersection of
-        <strong>frontier model evaluation</strong>, <strong>adversarial testing</strong>,
-        and threat intelligence. I help organizations understand where AI systems fail,
-        get abused, or create unanticipated risk.
-      </p>
-      <p>
-        My work spans hands-on red-teaming of tool-augmented AI agents,
-        <strong>China-focused</strong> threat intelligence on model access and proxy ecosystems,
-        disinformation and integrity evaluation, and compliance due diligence for
-        AI-adjacent transactions.
-      </p>
-
-      <div class="skill-tags">
-        <span class="tag">Prompt injection</span>
-        <span class="tag">Tool misuse</span>
-        <span class="tag">Agentic authz failures</span>
-        <span class="tag">Connector &amp; MCP risk</span>
-        <span class="tag">OSINT / SOCMINT</span>
-        <span class="tag">Sanctions screening</span>
-        <span class="tag">Influence operations</span>
-        <span class="tag">EU AI Act</span>
-      </div>
-
-      <p>
-        Multilingual across English, Spanish, French, Portuguese, Mandarin, and Slovak —
-        with applied coverage across Chinese-, Spanish-, French-, and Portuguese-language
-        threat landscapes.
-      </p>
-    </div>
-
-    <!-- Col 3: Experience -->
-    <div class="column">
-      <h2>Experience</h2>
-
-      <span class="section-label"><span class="pulse-dot"></span>Current:</span>
-      <ul class="experience-list">
-        <li>10A Labs — Senior Analyst, AI Red Teamer &amp; China Lead</li>
-      </ul>
-
-      <hr class="divider" />
-
-      <span class="section-label">Past:</span>
-      <ul class="experience-list">
-        <li>Spanish-Language Disinformation Research Fellow</li>
-        <li>Graphika — Social Media Analyst, French Election Coverage</li>
-        <li>U.S. Department of State (GEC) — Graduate Capstone Consultant</li>
-        <li>Columbia University (Picker Center) — Associate Director, EMPA</li>
-      </ul>
-
-      <hr class="divider" />
-
-      <span class="section-label">Education:</span>
-      <ul class="experience-list" style="list-style: none; padding-left: 0;">
-
-        <!-- To add logos: place a grayscale PNG/SVG in the repo root and update src below -->
-        <li>
-          <div class="edu-entry">
-            <div class="edu-logo-placeholder" title="Columbia SIPA"></div>
-            <span>Columbia SIPA — MIA, International Security Policy</span>
-          </div>
-        </li>
-        <li>
-          <div class="edu-entry">
-            <div class="edu-logo-placeholder" title="Sciences Po"></div>
-            <span>Sciences Po — Master of International Public Management</span>
-          </div>
-        </li>
-        <li>
-          <div class="edu-entry">
-            <div class="edu-logo-placeholder" title="Columbia University"></div>
-            <span>Columbia University — BA, Political Science</span>
-          </div>
-        </li>
-
-      </ul>
-    </div>
-
-    <!-- Col 4: Focus Areas -->
-    <div class="column">
-      <h2>Focus areas</h2>
+      <hr class="divider" style="margin-top: 16px;" />
 
       <span class="section-label">AI Security:</span>
       <ul class="experience-list">
@@ -403,54 +291,123 @@
       </ul>
     </div>
 
-  </div>
+    <!-- Col 2: About me + Projects -->
+    <div class="column">
+      <h2>About me</h2>
 
-  <!-- Projects -->
-  <div class="projects-section">
-    <h2>Projects</h2>
-    <div class="projects-grid">
+      <p>
+        Security-focused AI practitioner working at the intersection of
+        <strong>frontier model evaluation</strong>, <strong>adversarial testing</strong>,
+        and threat intelligence. I help organizations understand where AI systems fail,
+        get abused, or create unanticipated risk.
+      </p>
+      <p>
+        My work spans hands-on red-teaming of tool-augmented AI agents,
+        <strong>China-focused</strong> threat intelligence on model access and proxy ecosystems,
+        disinformation and integrity evaluation, and compliance due diligence for
+        AI-adjacent transactions.
+      </p>
 
-      <div class="project-card">
-        <div class="project-card-top">
-          <span class="project-name">Adaptive AI Red-Teaming System</span>
-          <a class="project-link" href="https://github.com/jeremymceballo/ROUGEEDEN" target="_blank" rel="noopener">↗</a>
-        </div>
-        <p class="project-desc">
-          Stage-gated orchestration framework for systematic frontier model red-teaming.
-          Implements multi-turn adversarial campaign execution with mutation-weighted strategy
-          selection, LLM-as-judge evaluation, and a closed-loop feedback cycle. Multilingual
-          adversarial coverage across six languages with support for OpenAI, Anthropic,
-          and custom model providers.
-        </p>
-        <div class="skill-tags" style="margin-bottom: 0;">
-          <span class="tag">Python</span>
-          <span class="tag">Multi-provider</span>
-          <span class="tag">LLM-as-judge</span>
-          <span class="tag">Multilingual</span>
-          <span class="tag">Agentic orchestration</span>
-        </div>
+      <div class="skill-tags">
+        <span class="tag">Prompt injection</span>
+        <span class="tag">Tool misuse</span>
+        <span class="tag">Agentic authz failures</span>
+        <span class="tag">Connector &amp; MCP risk</span>
+        <span class="tag">OSINT / SOCMINT</span>
+        <span class="tag">Sanctions screening</span>
+        <span class="tag">Influence operations</span>
+        <span class="tag">EU AI Act</span>
       </div>
 
-      <div class="project-card">
-        <div class="project-card-top">
-          <span class="project-name">PromptForge</span>
-          <a class="project-link" href="https://github.com/jeremymceballo/promptforge" target="_blank" rel="noopener">↗</a>
-        </div>
-        <p class="project-desc">
-          Structured prompt engineering and evaluation framework with a centralized registry,
-          multi-strategy orchestration, and provider-agnostic model clients. Designed to
-          support repeatable, versioned prompt testing workflows across frontier model providers
-          at scale.
-        </p>
-        <div class="skill-tags" style="margin-bottom: 0;">
-          <span class="tag">Python</span>
-          <span class="tag">Prompt engineering</span>
-          <span class="tag">Evaluation framework</span>
-          <span class="tag">Multi-provider</span>
-        </div>
-      </div>
+      <p>
+        Multilingual across English, Spanish, French, Portuguese, Mandarin, and Slovak —
+        with applied coverage across Chinese-, Spanish-, French-, and Portuguese-language
+        threat landscapes.
+      </p>
 
+      <hr class="divider" />
+      <span class="section-label">Projects:</span>
+
+      <div class="projects-grid">
+
+        <div class="project-card">
+          <div class="project-card-top">
+            <span class="project-name">Adaptive AI Red-Teaming System</span>
+            <a class="project-link" href="https://github.com/jeremymceballo/ROUGEEDEN" target="_blank" rel="noopener">↗</a>
+          </div>
+          <p class="project-desc">
+            Stage-gated orchestration framework for multilingual frontier model red-teaming
+            with mutation-weighted strategy selection, LLM-as-judge evaluation, and
+            closed-loop feedback across OpenAI, Anthropic, and custom providers.
+          </p>
+          <div class="skill-tags" style="margin-bottom: 0;">
+            <span class="tag">Python</span>
+            <span class="tag">LLM-as-judge</span>
+            <span class="tag">Multilingual</span>
+            <span class="tag">Agentic</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-card-top">
+            <span class="project-name">PromptForge</span>
+            <a class="project-link" href="https://github.com/jeremymceballo/promptforge" target="_blank" rel="noopener">↗</a>
+          </div>
+          <p class="project-desc">
+            Provider-agnostic prompt engineering and evaluation framework with centralized
+            registry, multi-strategy orchestration, and versioned testing workflows
+            across frontier model providers.
+          </p>
+          <div class="skill-tags" style="margin-bottom: 0;">
+            <span class="tag">Python</span>
+            <span class="tag">Prompt engineering</span>
+            <span class="tag">Evaluation</span>
+            <span class="tag">Multi-provider</span>
+          </div>
+        </div>
+
+      </div>
     </div>
+
+    <!-- Col 3: Experience -->
+    <div class="column">
+      <h2>Experience</h2>
+
+      <span class="section-label"><span class="pulse-dot"></span>Current:</span>
+      <ul class="experience-list">
+        <li>10A Labs — Senior Analyst, AI Red Teamer &amp; China Lead</li>
+      </ul>
+
+      <hr class="divider" />
+
+      <span class="section-label">Past:</span>
+      <ul class="experience-list">
+        <li>Spanish-Language Disinformation Research Fellow</li>
+        <li>Graphika — Social Media Analyst, French Election Coverage</li>
+        <li>U.S. Department of State (GEC) — Graduate Capstone Consultant</li>
+        <li>Columbia University (Picker Center) — Associate Director, EMPA</li>
+      </ul>
+    </div>
+
+    <!-- Col 4: Education -->
+    <div class="column">
+      <h2>Education</h2>
+
+      <!-- To add logos: place PNG/SVG in repo root and swap div for <img class="edu-logo" src="..."> -->
+      <div class="edu-entry">
+        <div class="edu-logo-placeholder" title="Columbia SIPA"></div>
+        <span>Columbia SIPA — MIA, International Security Policy</span>
+      </div>
+      <div class="edu-entry">
+        <div class="edu-logo-placeholder" title="Sciences Po"></div>
+        <span>Sciences Po — Master of International Public Management</span>
+      </div>
+      <div class="edu-entry">
+        <div class="edu-logo-placeholder" title="Columbia University"></div>
+        <span>Columbia University — BA, Political Science</span>
+      </div>
+    </div>
+
   </div>
 
 </body>
