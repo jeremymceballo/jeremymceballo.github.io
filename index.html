@@ -28,7 +28,7 @@
 
     .container {
       display: grid;
-      grid-template-columns: 1fr 2.6fr 1.4fr 1.2fr;
+      grid-template-columns: 0.85fr 2fr 1.8fr 1.6fr;
       gap: 32px;
       max-width: 1400px;
       margin: 0 auto;
@@ -61,7 +61,7 @@
     .nav-list {
       list-style: none;
       padding: 0;
-      margin: 0 0 0;
+      margin: 0;
     }
 
     .nav-list li { margin-bottom: 8px; }
@@ -178,20 +178,20 @@
       margin-top: 2px;
     }
 
-    /* ── Project cards (nested in col 2) ── */
+    /* ── Project cards ── */
     .projects-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 12px;
+      gap: 10px;
       margin-top: 4px;
     }
 
     .project-card {
       border: 1px solid var(--border-color);
-      padding: 12px 14px;
+      padding: 10px 12px;
       display: flex;
       flex-direction: column;
-      gap: 7px;
+      gap: 6px;
       transition: border-color 0.2s;
     }
 
@@ -206,7 +206,7 @@
 
     .project-name {
       font-weight: 500;
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       color: #fff;
     }
 
@@ -221,7 +221,7 @@
     .project-link:hover { color: var(--blue); }
 
     .project-desc {
-      font-size: 0.78rem;
+      font-size: 0.76rem;
       color: #999;
       margin: 0;
       line-height: 1.5;
@@ -242,10 +242,9 @@
 
   <div class="container">
 
-    <!-- Col 1: Name + Nav + Focus Areas -->
+    <!-- Col 1: Name + Links -->
     <div class="column">
       <h2 class="name-heading">Jeremy Ceballo</h2>
-
       <ul class="nav-list">
         <li>
           <a href="https://www.linkedin.com/in/jeremy-ceballo-6138ba140/" target="_blank" rel="noopener">
@@ -258,43 +257,11 @@
           </a>
         </li>
       </ul>
-
-      <hr class="divider" style="margin-top: 16px;" />
-
-      <span class="section-label">AI Security:</span>
-      <ul class="experience-list">
-        <li>Frontier model red-teaming</li>
-        <li>Prompt injection &amp; tool misuse</li>
-        <li>Connector &amp; MCP risk</li>
-        <li>Agentic authorization failures</li>
-        <li>Sandbox &amp; execution risk</li>
-      </ul>
-
-      <hr class="divider" />
-
-      <span class="section-label">Intelligence &amp; Integrity:</span>
-      <ul class="experience-list">
-        <li>China threat &amp; proxy OSINT</li>
-        <li>Disinformation evaluation</li>
-        <li>Influence operation analysis</li>
-        <li>Harmful-manipulation testing</li>
-        <li>EU AI Act-aligned compliance</li>
-      </ul>
-
-      <hr class="divider" />
-
-      <span class="section-label">Investigations:</span>
-      <ul class="experience-list">
-        <li>Sanctions screening &amp; due diligence</li>
-        <li>Payment-rail risk assessment</li>
-        <li>Structured investigative reporting</li>
-      </ul>
     </div>
 
-    <!-- Col 2: About me + Projects -->
+    <!-- Col 2: About me -->
     <div class="column">
       <h2>About me</h2>
-
       <p>
         Security-focused AI practitioner working at the intersection of
         <strong>frontier model evaluation</strong>, <strong>adversarial testing</strong>,
@@ -307,7 +274,6 @@
         disinformation and integrity evaluation, and compliance due diligence for
         AI-adjacent transactions.
       </p>
-
       <div class="skill-tags">
         <span class="tag">Prompt injection</span>
         <span class="tag">Tool misuse</span>
@@ -318,29 +284,60 @@
         <span class="tag">Influence operations</span>
         <span class="tag">EU AI Act</span>
       </div>
-
       <p>
         Multilingual across English, Spanish, French, Portuguese, Mandarin, and Slovak —
         with applied coverage across Chinese-, Spanish-, French-, and Portuguese-language
         threat landscapes.
       </p>
+    </div>
+
+    <!-- Col 3: Focus Areas + Projects -->
+    <div class="column">
+      <h2>Focus areas</h2>
+
+      <!-- AI Security: removed "Frontier model red-teaming" (covered by ROUGEEDEN project) -->
+      <span class="section-label">AI Security:</span>
+      <ul class="experience-list">
+        <li>Prompt injection &amp; tool misuse</li>
+        <li>Connector &amp; MCP risk</li>
+        <li>Agentic authorization failures</li>
+        <li>Sandbox &amp; execution risk</li>
+      </ul>
 
       <hr class="divider" />
+
+      <!-- Intelligence: removed "Harmful-manipulation testing" (covered by PromptForge evaluation work) -->
+      <span class="section-label">Intelligence &amp; Integrity:</span>
+      <ul class="experience-list">
+        <li>China threat &amp; proxy OSINT</li>
+        <li>Disinformation evaluation</li>
+        <li>Influence operation analysis</li>
+        <li>EU AI Act-aligned compliance</li>
+      </ul>
+
+      <hr class="divider" />
+
+      <span class="section-label">Investigations:</span>
+      <ul class="experience-list">
+        <li>Sanctions screening &amp; due diligence</li>
+        <li>Payment-rail risk assessment</li>
+        <li>Structured investigative reporting</li>
+      </ul>
+
+      <hr class="divider" />
+
       <span class="section-label">Projects:</span>
-
       <div class="projects-grid">
-
         <div class="project-card">
           <div class="project-card-top">
             <span class="project-name">Adaptive AI Red-Teaming System</span>
             <a class="project-link" href="https://github.com/jeremymceballo/ROUGEEDEN" target="_blank" rel="noopener">↗</a>
           </div>
           <p class="project-desc">
-            Stage-gated orchestration framework for multilingual frontier model red-teaming
-            with mutation-weighted strategy selection, LLM-as-judge evaluation, and
-            closed-loop feedback across OpenAI, Anthropic, and custom providers.
+            Stage-gated orchestration framework for multilingual frontier model red-teaming with
+            mutation-weighted strategy selection and LLM-as-judge evaluation.
           </p>
-          <div class="skill-tags" style="margin-bottom: 0;">
+          <div class="skill-tags" style="margin-bottom:0;">
             <span class="tag">Python</span>
             <span class="tag">LLM-as-judge</span>
             <span class="tag">Multilingual</span>
@@ -355,21 +352,19 @@
           </div>
           <p class="project-desc">
             Provider-agnostic prompt engineering and evaluation framework with centralized
-            registry, multi-strategy orchestration, and versioned testing workflows
-            across frontier model providers.
+            registry and versioned testing workflows across frontier model providers.
           </p>
-          <div class="skill-tags" style="margin-bottom: 0;">
+          <div class="skill-tags" style="margin-bottom:0;">
             <span class="tag">Python</span>
             <span class="tag">Prompt engineering</span>
             <span class="tag">Evaluation</span>
             <span class="tag">Multi-provider</span>
           </div>
         </div>
-
       </div>
     </div>
 
-    <!-- Col 3: Experience -->
+    <!-- Col 4: Experience + Education -->
     <div class="column">
       <h2>Experience</h2>
 
@@ -384,15 +379,13 @@
       <ul class="experience-list">
         <li>Spanish-Language Disinformation Research Fellow</li>
         <li>Graphika — Social Media Analyst, French Election Coverage</li>
-        <li>U.S. Department of State (GEC) — Graduate Capstone Consultant</li>
-        <li>Columbia University (Picker Center) — Associate Director, EMPA</li>
+        <li>U.S. Department of State (GEC) — Capstone Consultant</li>
+        <li>Columbia University (Picker Center) — Associate Director</li>
       </ul>
-    </div>
 
-    <!-- Col 4: Education -->
-    <div class="column">
-      <h2>Education</h2>
+      <hr class="divider" />
 
+      <span class="section-label">Education:</span>
       <!-- To add logos: place PNG/SVG in repo root and swap div for <img class="edu-logo" src="..."> -->
       <div class="edu-entry">
         <div class="edu-logo-placeholder" title="Columbia SIPA"></div>
