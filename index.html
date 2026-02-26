@@ -4,14 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jeremy Ceballo | Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Shippori+Mincho:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Shippori+Mincho:wght@400;600&display=swap" rel="stylesheet" />
   <style>
     :root {
       --bg-color: #000000;
       --text-color: #ffffff;
       --border-color: #333333;
       --accent-color: #aaaaaa;
+      --blue: #7dd3f0;
     }
+
+    *, *::before, *::after { box-sizing: border-box; }
 
     body {
       background-color: var(--bg-color);
@@ -36,6 +39,17 @@
       padding-top: 20px;
     }
 
+    /* ── Name (col 1 heading) ── */
+    .name-heading {
+      font-family: 'Shippori Mincho', Georgia, serif;
+      font-size: 1.4rem;
+      font-weight: 600;
+      letter-spacing: 0.07em;
+      margin-bottom: 30px;
+      margin-top: 0;
+    }
+
+    /* ── Column headers ── */
     h2 {
       font-family: 'Shippori Mincho', Georgia, serif;
       font-size: 1.4rem;
@@ -45,6 +59,7 @@
       letter-spacing: 0.01em;
     }
 
+    /* ── Nav links with animated arrow ── */
     .nav-list {
       list-style: none;
       padding: 0;
@@ -59,31 +74,62 @@
       text-decoration: none;
       display: flex;
       align-items: center;
+      transition: color 0.2s;
     }
 
-    .nav-list a::before {
-      content: "→";
+    .nav-list a .arrow {
+      display: inline-block;
       margin-right: 8px;
       font-weight: 300;
+      transition: transform 0.2s ease;
     }
 
     .nav-list a:hover {
-      color: var(--accent-color);
+      color: var(--blue);
+      animation: glitch 0.25s steps(1) forwards;
     }
 
+    .nav-list a:hover .arrow {
+      transform: translateX(5px);
+    }
+
+    @keyframes glitch {
+      0%   { text-shadow:  2px 0 #f07dd3, -2px 0 var(--blue); }
+      33%  { text-shadow: -2px 0 var(--blue), 2px 0 #f07dd3; }
+      66%  { text-shadow:  1px 0 #f07dd3; }
+      100% { text-shadow: none; }
+    }
+
+    /* ── Body copy ── */
     p {
       font-size: 0.95rem;
       margin-bottom: 25px;
       color: #efefef;
     }
 
-    .italic-list {
-      font-style: italic;
-      font-size: 0.9rem;
-      margin-bottom: 25px;
-      color: #cccccc;
+    p strong {
+      color: #ffffff;
+      font-weight: 600;
     }
 
+    /* ── Skill tags (replaces italic list) ── */
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-bottom: 25px;
+    }
+
+    .skill-tags .tag {
+      font-size: 0.75rem;
+      padding: 3px 9px;
+      border: 1px solid var(--blue);
+      border-radius: 3px;
+      color: var(--blue);
+      white-space: nowrap;
+    }
+
+    /* ── Experience list ── */
     ul.experience-list {
       list-style: disc;
       padding-left: 20px;
@@ -94,11 +140,55 @@
       margin-bottom: 12px;
     }
 
+    /* ── Section subheaders ── */
     .section-label {
-      display: block;
+      display: flex;
+      align-items: center;
+      gap: 7px;
       font-size: 1rem;
       margin-bottom: 20px;
-      color: #7dd3f0;
+      color: var(--blue);
+    }
+
+    /* ── Pulsing green dot ── */
+    .pulse-dot {
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #22c55e;
+      flex-shrink: 0;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.5); }
+      50%       { box-shadow: 0 0 0 5px rgba(34, 197, 94, 0); }
+    }
+
+    /* ── Education with logo slot ── */
+    .edu-entry {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .edu-logo {
+      width: 20px;
+      height: 20px;
+      object-fit: contain;
+      filter: grayscale(1) brightness(0.75);
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .edu-logo-placeholder {
+      width: 20px;
+      height: 20px;
+      border: 1px solid #444;
+      border-radius: 2px;
+      flex-shrink: 0;
     }
 
     hr.divider {
@@ -108,12 +198,8 @@
     }
 
     @media (max-width: 900px) {
-      .container {
-        grid-template-columns: 1fr;
-      }
-      body {
-        padding: 20px;
-      }
+      .container { grid-template-columns: 1fr; }
+      body { padding: 20px; }
     }
   </style>
 </head>
@@ -123,10 +209,18 @@
 
     <!-- Col 1: Name + Nav -->
     <div class="column">
-      <h2>Jeremy Ceballo</h2>
+      <h2 class="name-heading">Jeremy Ceballo</h2>
       <ul class="nav-list">
-        <li><a href="https://www.linkedin.com/in/jeremy-ceballo-6138ba140/" target="_blank" rel="noopener">linkedin</a></li>
-        <li><a href="mailto:jeremymceballo@gmail.com">email</a></li>
+        <li>
+          <a href="https://www.linkedin.com/in/jeremy-ceballo-6138ba140/" target="_blank" rel="noopener">
+            <span class="arrow">→</span>linkedin
+          </a>
+        </li>
+        <li>
+          <a href="mailto:jeremymceballo@gmail.com">
+            <span class="arrow">→</span>email
+          </a>
+        </li>
       </ul>
     </div>
 
@@ -134,22 +228,33 @@
     <div class="column">
       <h2>About me</h2>
       <p>
-        Security-focused AI practitioner working at the intersection of frontier model evaluation,
-        adversarial testing, and threat intelligence. I help organizations understand where AI
-        systems fail, get abused, or create unanticipated risk.
+        Security-focused AI practitioner working at the intersection of
+        <strong>frontier model evaluation</strong>, <strong>adversarial testing</strong>,
+        and threat intelligence. I help organizations understand where AI systems fail,
+        get abused, or create unanticipated risk.
       </p>
       <p>
-        My work spans hands-on red-teaming of tool-augmented AI agents, China-focused threat
-        intelligence on model access and proxy ecosystems, disinformation and integrity evaluation,
-        and compliance due diligence for AI-adjacent transactions.
+        My work spans hands-on red-teaming of tool-augmented AI agents,
+        <strong>China-focused</strong> threat intelligence on model access and proxy ecosystems,
+        disinformation and integrity evaluation, and compliance due diligence for
+        AI-adjacent transactions.
       </p>
-      <div class="italic-list">
-        Prompt injection, tool misuse, agentic authorization failures, connector &amp; MCP risk,
-        OSINT, SOCMINT, sanctions screening, influence operations, EU AI Act alignment...
+
+      <div class="skill-tags">
+        <span class="tag">Prompt injection</span>
+        <span class="tag">Tool misuse</span>
+        <span class="tag">Agentic authz failures</span>
+        <span class="tag">Connector &amp; MCP risk</span>
+        <span class="tag">OSINT / SOCMINT</span>
+        <span class="tag">Sanctions screening</span>
+        <span class="tag">Influence operations</span>
+        <span class="tag">EU AI Act</span>
       </div>
+
       <p>
         Multilingual across English, Spanish, French, Portuguese, Mandarin, and Slovak —
-        with applied coverage across Chinese-, Spanish-, French-, and Portuguese-language threat landscapes.
+        with applied coverage across Chinese-, Spanish-, French-, and Portuguese-language
+        threat landscapes.
       </p>
     </div>
 
@@ -157,7 +262,7 @@
     <div class="column">
       <h2>Experience</h2>
 
-      <span class="section-label">Current:</span>
+      <span class="section-label"><span class="pulse-dot"></span>Current:</span>
       <ul class="experience-list">
         <li>10A Labs — Senior Analyst, AI Red Teamer &amp; China Lead</li>
       </ul>
@@ -175,10 +280,28 @@
       <hr class="divider" />
 
       <span class="section-label">Education:</span>
-      <ul class="experience-list">
-        <li>Columbia SIPA — MIA, International Security Policy</li>
-        <li>Sciences Po — Master of International Public Management</li>
-        <li>Columbia University — BA, Political Science</li>
+      <ul class="experience-list" style="list-style: none; padding-left: 0;">
+
+        <!-- To add logos: place a grayscale PNG/SVG in the repo root and update src below -->
+        <li>
+          <div class="edu-entry">
+            <div class="edu-logo-placeholder" title="Columbia SIPA"></div>
+            <span>Columbia SIPA — MIA, International Security Policy</span>
+          </div>
+        </li>
+        <li>
+          <div class="edu-entry">
+            <div class="edu-logo-placeholder" title="Sciences Po"></div>
+            <span>Sciences Po — Master of International Public Management</span>
+          </div>
+        </li>
+        <li>
+          <div class="edu-entry">
+            <div class="edu-logo-placeholder" title="Columbia University"></div>
+            <span>Columbia University — BA, Political Science</span>
+          </div>
+        </li>
+
       </ul>
     </div>
 
