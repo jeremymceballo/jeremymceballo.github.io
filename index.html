@@ -160,23 +160,6 @@
       margin: 14px 0;
     }
 
-    /* ── Education entries ── */
-    .edu-entry {
-      display: flex;
-      align-items: flex-start;
-      gap: 8px;
-      margin-bottom: 8px;
-      font-size: 0.85rem;
-    }
-
-    .edu-logo-placeholder {
-      width: 16px;
-      height: 16px;
-      border: 1px solid #444;
-      border-radius: 2px;
-      flex-shrink: 0;
-      margin-top: 2px;
-    }
 
     /* ── Project cards ── */
     .projects-grid {
@@ -363,19 +346,11 @@
       <hr class="divider" />
 
       <span class="section-label">Education:</span>
-      <!-- To add logos: place PNG/SVG in repo root and swap div for <img class="edu-logo" src="..."> -->
-      <div class="edu-entry">
-        <div class="edu-logo-placeholder" title="Columbia SIPA"></div>
-        <span>Columbia SIPA — MIA, International Security Policy</span>
-      </div>
-      <div class="edu-entry">
-        <div class="edu-logo-placeholder" title="Sciences Po"></div>
-        <span>Sciences Po — Master of International Public Management</span>
-      </div>
-      <div class="edu-entry">
-        <div class="edu-logo-placeholder" title="Columbia University"></div>
-        <span>Columbia University — BA, Political Science</span>
-      </div>
+      <ul class="experience-list">
+        <li>Columbia SIPA — MIA, International Security Policy</li>
+        <li>Sciences Po — Master of International Public Management</li>
+        <li>Columbia University — BA, Political Science</li>
+      </ul>
     </div>
 
   </div>
