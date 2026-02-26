@@ -197,6 +197,12 @@
       margin: 30px 0;
     }
 
+    /* scramble chars shown mid-animation */
+    .scramble-char {
+      color: var(--blue);
+      opacity: 0.7;
+    }
+
     @media (max-width: 900px) {
       .container { grid-template-columns: 1fr; }
       body { padding: 20px; }
@@ -341,5 +347,69 @@
 
   </div>
 
+  <script>
+    class TextScramble {
+      constructor(el) {
+        this.el = el;
+        this.chars = '!<>-_\\/[]{}#@$%^&*?=+~';
+        this.update = this.update.bind(this);
+      }
+
+      setText(newText) {
+        const length = newText.length;
+        const promise = new Promise(resolve => (this.resolve = resolve));
+        this.queue = [];
+        for (let i = 0; i < length; i++) {
+          const to = newText[i];
+          const start = Math.floor(i * 0.6);
+          const end = start + 6 + Math.floor(Math.random() * 6);
+          this.queue.push({ to, start, end, char: '' });
+        }
+        cancelAnimationFrame(this.frameRequest);
+        this.frame = 0;
+        this.update();
+        return promise;
+      }
+
+      update() {
+        let output = '';
+        let complete = 0;
+        for (let i = 0; i < this.queue.length; i++) {
+          let { to, start, end, char } = this.queue[i];
+          if (this.frame >= end) {
+            complete++;
+            output += to;
+          } else if (this.frame >= start) {
+            if (!char || Math.random() < 0.3) {
+              char = this.chars[Math.floor(Math.random() * this.chars.length)];
+              this.queue[i].char = char;
+            }
+            output += `<span class="scramble-char">${char}</span>`;
+          } else {
+            output += '<span class="scramble-char">_</span>';
+          }
+        }
+        this.el.innerHTML = output;
+        if (complete === this.queue.length) {
+          this.resolve();
+        } else {
+          this.frameRequest = requestAnimationFrame(this.update);
+          this.frame++;
+        }
+      }
+    }
+
+    // Targets: name + all column h2s, staggered
+    document.addEventListener('DOMContentLoaded', () => {
+      const targets = document.querySelectorAll('h2');
+      targets.forEach((el, i) => {
+        const original = el.textContent;
+        el.textContent = '';
+        setTimeout(() => {
+          new TextScramble(el).setText(original);
+        }, i * 120); // 120ms stagger between each heading
+      });
+    });
+  </script>
 </body>
 </html>
